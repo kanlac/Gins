@@ -54,14 +54,38 @@
 		30F535962074EFE0006DF67D /* Gins */ = {
 			isa = PBXGroup;
 			children = (
+				30F535A92074F7B1006DF67D /* Modal */,
+				30F535AA2074F7BE006DF67D /* View */,
+				30F535AB2074F7CA006DF67D /* Controller */,
 				30F535972074EFE0006DF67D /* AppDelegate.swift */,
-				30F535992074EFE0006DF67D /* ViewController.swift */,
 				30F5359B2074EFE0006DF67D /* Main.storyboard */,
 				30F5359E2074EFE0006DF67D /* Assets.xcassets */,
 				30F535A02074EFE0006DF67D /* LaunchScreen.storyboard */,
 				30F535A32074EFE0006DF67D /* Info.plist */,
 			);
 			path = Gins;
+			sourceTree = "<group>";
+		};
+		30F535A92074F7B1006DF67D /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		30F535AA2074F7BE006DF67D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		30F535AB2074F7CA006DF67D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				30F535992074EFE0006DF67D /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
