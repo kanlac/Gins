@@ -12,6 +12,10 @@
 		30F5359D2074EFE0006DF67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F5359B2074EFE0006DF67D /* Main.storyboard */; };
 		30F5359F2074EFE0006DF67D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30F5359E2074EFE0006DF67D /* Assets.xcassets */; };
 		30F535A22074EFE0006DF67D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F535A02074EFE0006DF67D /* LaunchScreen.storyboard */; };
+		30F535AD2074F8F3006DF67D /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535AC2074F8F3006DF67D /* Track.swift */; };
+		30F535B0207508E4006DF67D /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535AF207508E4006DF67D /* LibraryAPI.swift */; };
+		30F535B2207509D9006DF67D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535B1207509D9006DF67D /* Constants.swift */; };
+		30F535B420750F18006DF67D /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535B320750F18006DF67D /* PersistencyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		30F5359E2074EFE0006DF67D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30F535A12074EFE0006DF67D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30F535A32074EFE0006DF67D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30F535AC2074F8F3006DF67D /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		30F535AF207508E4006DF67D /* LibraryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
+		30F535B1207509D9006DF67D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		30F535B320750F18006DF67D /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +62,13 @@
 		30F535962074EFE0006DF67D /* Gins */ = {
 			isa = PBXGroup;
 			children = (
+				30F5359B2074EFE0006DF67D /* Main.storyboard */,
 				30F535A92074F7B1006DF67D /* Modal */,
 				30F535AA2074F7BE006DF67D /* View */,
 				30F535AB2074F7CA006DF67D /* Controller */,
-				30F535972074EFE0006DF67D /* AppDelegate.swift */,
-				30F5359B2074EFE0006DF67D /* Main.storyboard */,
+				30F535AE207508B4006DF67D /* API */,
 				30F5359E2074EFE0006DF67D /* Assets.xcassets */,
+				30F535972074EFE0006DF67D /* AppDelegate.swift */,
 				30F535A02074EFE0006DF67D /* LaunchScreen.storyboard */,
 				30F535A32074EFE0006DF67D /* Info.plist */,
 			);
@@ -69,6 +78,7 @@
 		30F535A92074F7B1006DF67D /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				30F535AC2074F8F3006DF67D /* Track.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -86,6 +96,16 @@
 				30F535992074EFE0006DF67D /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		30F535AE207508B4006DF67D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				30F535AF207508E4006DF67D /* LibraryAPI.swift */,
+				30F535B1207509D9006DF67D /* Constants.swift */,
+				30F535B320750F18006DF67D /* PersistencyManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,8 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30F535B2207509D9006DF67D /* Constants.swift in Sources */,
+				30F535B420750F18006DF67D /* PersistencyManager.swift in Sources */,
 				30F5359A2074EFE0006DF67D /* ViewController.swift in Sources */,
 				30F535982074EFE0006DF67D /* AppDelegate.swift in Sources */,
+				30F535B0207508E4006DF67D /* LibraryAPI.swift in Sources */,
+				30F535AD2074F8F3006DF67D /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
