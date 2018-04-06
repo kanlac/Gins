@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30D469032077373600838A6F /* HTTPSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D469022077373600838A6F /* HTTPSClient.swift */; };
+		30D4690520773C4800838A6F /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690420773C4800838A6F /* NotificationExtension.swift */; };
 		30F535982074EFE0006DF67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535972074EFE0006DF67D /* AppDelegate.swift */; };
 		30F5359A2074EFE0006DF67D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535992074EFE0006DF67D /* ViewController.swift */; };
 		30F5359D2074EFE0006DF67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F5359B2074EFE0006DF67D /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30D469022077373600838A6F /* HTTPSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPSClient.swift; sourceTree = "<group>"; };
+		30D4690420773C4800838A6F /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		30F535942074EFE0006DF67D /* Gins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30F535972074EFE0006DF67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30F535992074EFE0006DF67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				30F5359B2074EFE0006DF67D /* Main.storyboard */,
+				30F535B1207509D9006DF67D /* Constants.swift */,
+				30D4690420773C4800838A6F /* NotificationExtension.swift */,
 				30F535A92074F7B1006DF67D /* Modal */,
 				30F535AA2074F7BE006DF67D /* View */,
 				30F535AB2074F7CA006DF67D /* Controller */,
@@ -102,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				30F535AF207508E4006DF67D /* LibraryAPI.swift */,
-				30F535B1207509D9006DF67D /* Constants.swift */,
+				30D469022077373600838A6F /* HTTPSClient.swift */,
 				30F535B320750F18006DF67D /* PersistencyManager.swift */,
 			);
 			path = API;
@@ -182,6 +188,8 @@
 			files = (
 				30F535B2207509D9006DF67D /* Constants.swift in Sources */,
 				30F535B420750F18006DF67D /* PersistencyManager.swift in Sources */,
+				30D4690520773C4800838A6F /* NotificationExtension.swift in Sources */,
+				30D469032077373600838A6F /* HTTPSClient.swift in Sources */,
 				30F5359A2074EFE0006DF67D /* ViewController.swift in Sources */,
 				30F535982074EFE0006DF67D /* AppDelegate.swift in Sources */,
 				30F535B0207508E4006DF67D /* LibraryAPI.swift in Sources */,

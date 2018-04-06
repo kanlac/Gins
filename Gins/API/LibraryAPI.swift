@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+final class LibraryAPI {
+    
+    static let shared = LibraryAPI()
+    
+    static let httpsClient = HTTPSClient()
+    static let persistencyManager = PersistencyManager()
+    
+    // add notification observer..
+    // init {}
+}
