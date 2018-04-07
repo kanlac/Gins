@@ -8,15 +8,29 @@
 
 import Foundation
 
-// 文件的最终管理
-
 final class PersistencyManager {
     
     private var tracks = [Track]()
+    private var lyrics = String()
     
-    init() {
-        // 调用 API 获取数据存入 tracks
+    func getTracks() -> [Track] {
+        return tracks
+    }
+    
+    func saveTracks(_ tracks: [Track]) {
+        self.tracks = tracks
         
+        NotificationCenter.default.post(name: .updateViewNK, object: self, userInfo: nil)
+    }
+    
+    func getLyrics() -> String {
+        return lyrics
+    }
+    
+    func saveLyrics(_ lyrics: String) {
+        self.lyrics = lyrics
+        
+        // add post: lyrics data stored
     }
     
 }

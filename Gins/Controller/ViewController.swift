@@ -11,19 +11,47 @@ import UIKit
 class ViewController: UIViewController {
     
     var allTracks = [Track]()
-
-    // MARK: Outlets
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var albumLabel: UILabel!
     
-    // MARK: Controller Overrides
-    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(showLatestTrack(with:)), name: .updateViewNK, object: nil)
+        // add observer: lyrics data stored..
+        
+        updateViewProperties()
+        
+        // handle later
+        let urlString = ""
+        LibraryAPI.shared.loadData(url: urlString)
+        
+    }
+    
+    func updateViewProperties() {
+        
+        allTracks = LibraryAPI.shared.getTracks()
+        
+        // latest
+        if allTracks.count > 0 {
+            let latest = allTracks[0]
+            titleLabel.text = latest.title
+            artistLabel.text = latest.artist
+            albumLabel.text = latest.album
+        }
+        
+        // table view
+        
+        
+    }
+    
+    // userInfo had no use, consider delegate instead?
+    @objc func showLatestTrack(with notification: Notification) {
+        updateViewProperties()
     }
     
 }

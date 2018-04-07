@@ -10,26 +10,26 @@ import Foundation
 
 class MusixmatchClient {
     
-    func getLyrics(track: String, artist: String) -> String {
-        let requestString = Constants.Musixmatch.base_url + Constants.Musixmatch.Method.get_lyrics + Constants.Musixmatch.Key.format + Constants.Musixmatch.Value.format + Constants.Musixmatch.Key.callback + Constants.Musixmatch.Value.callback + Constants.Musixmatch.Key.track_name + track + Constants.Musixmatch.Key.artist_name + artist + Constants.Musixmatch.Key.api_key + Constants.Musixmatch.Value.api_key
+    func fetchLyrics(title: String, artist: String) -> String {
+        let requestString = Constants.Musixmatch.base_url + Constants.Musixmatch.Method.get_lyrics + Constants.Musixmatch.Key.format + Constants.Musixmatch.Value.format + Constants.Musixmatch.Key.callback + Constants.Musixmatch.Value.callback + Constants.Musixmatch.Key.track_name + title + Constants.Musixmatch.Key.artist_name + artist + Constants.Musixmatch.Key.api_key + Constants.Musixmatch.Value.api_key
         let encodedRequestString = requestString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         let request = URL(string: encodedRequestString)!
-        
+
         var finalLyrics: String?
-        
+
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error == nil {
-                
+
                 guard let data = data else {
                     print("No data returned.")
                     return
                 }
-                
+
                 let parseResult: [String: AnyObject]!
-                
+
                 do {
                     parseResult = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
-                    
+
                     guard let message = parseResult["message"] as? [String: AnyObject] else {
                         print("Get message error.")
                         return
@@ -46,19 +46,19 @@ class MusixmatchClient {
                         print("lyrics_body error.")
                         return
                     }
-                    
+
                     // assign final lyrics
                     finalLyrics = lyrics_body.replacingOccurrences(of: ",\n", with: "\n").replacingOccurrences(of: ", ", with: "\n").replacingOccurrences(of: ".\n", with: "\n")
                 } catch {
                     print("could not parse as JSON")
                 }
-                
-                
+
+
             } else {
                 print(error ?? "Error (no message)")
             }
             }.resume()
-        
+
         return finalLyrics!
     }
     

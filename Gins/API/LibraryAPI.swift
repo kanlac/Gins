@@ -16,15 +16,36 @@ final class LibraryAPI {
     private let lastfmClient = LastfmClient()
     private let musixmatchClient = MusixmatchClient()
     
-    // add notification observer..
-    // init {}
+    // MARK: Public Methods
     
-    func fetchTracks(_ url: String) -> [Track] {
+    func getTracks() -> [Track] {
+        return persistencyManager.getTracks()
+    }
+    
+    func loadData(url: String) {
+        
+        // tracks
+        let tracks = fetchTracks(url)
+        
+        // lyrics
+        let latest = tracks[0]
+        let lyrics = fetchLyrics(title: latest.title, artist: latest.artist)
+        
+        // Save to cache
+        persistencyManager.saveTracks(tracks)
+        persistencyManager.saveLyrics(lyrics)
+        
+    }
+    
+    
+    // MARK: Private Methods
+    
+    private func fetchTracks(_ url: String) -> [Track] {
         return lastfmClient.fetchTracks(url)
     }
     
-    func getLyrics(track: String, artist: String) -> String {
-        return musixmatchClient.getLyrics(track: track, artist: artist)
+    private func fetchLyrics(title: String, artist: String) -> String {
+        return musixmatchClient.fetchLyrics(title: title, artist: artist)
     }
     
 }

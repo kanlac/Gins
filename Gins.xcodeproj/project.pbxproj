@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30D4690520773C4800838A6F /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690420773C4800838A6F /* NotificationExtension.swift */; };
+		302E842B2078E5A8008F417E /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E842A2078E5A8008F417E /* NotificationExtension.swift */; };
 		30D4690720774CA500838A6F /* LastfmClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690620774CA500838A6F /* LastfmClient.swift */; };
 		30D4690920774DB200838A6F /* MusixmatchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690820774DB200838A6F /* MusixmatchClient.swift */; };
 		30D4690B2077559B00838A6F /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690A2077559B00838A6F /* PersistencyManager.swift */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		30D4690420773C4800838A6F /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		302E842A2078E5A8008F417E /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		30D4690620774CA500838A6F /* LastfmClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastfmClient.swift; sourceTree = "<group>"; };
 		30D4690820774DB200838A6F /* MusixmatchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusixmatchClient.swift; sourceTree = "<group>"; };
 		30D4690A2077559B00838A6F /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
@@ -49,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		302E84292078E589008F417E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				302E842A2078E5A8008F417E /* NotificationExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		30F5358B2074EFE0006DF67D = {
 			isa = PBXGroup;
 			children = (
@@ -68,12 +76,12 @@
 		30F535962074EFE0006DF67D /* Gins */ = {
 			isa = PBXGroup;
 			children = (
+				302E84292078E589008F417E /* Extension */,
 				30F535A92074F7B1006DF67D /* Model */,
 				30F535AA2074F7BE006DF67D /* View */,
 				30F535AB2074F7CA006DF67D /* Controller */,
 				30F5359B2074EFE0006DF67D /* Main.storyboard */,
 				30F535B1207509D9006DF67D /* Constants.swift */,
-				30D4690420773C4800838A6F /* NotificationExtension.swift */,
 				30F535AE207508B4006DF67D /* API */,
 				30F5359E2074EFE0006DF67D /* Assets.xcassets */,
 				30F535972074EFE0006DF67D /* AppDelegate.swift */,
@@ -189,8 +197,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302E842B2078E5A8008F417E /* NotificationExtension.swift in Sources */,
 				30F535B2207509D9006DF67D /* Constants.swift in Sources */,
-				30D4690520773C4800838A6F /* NotificationExtension.swift in Sources */,
 				30D4690720774CA500838A6F /* LastfmClient.swift in Sources */,
 				30D4690920774DB200838A6F /* MusixmatchClient.swift in Sources */,
 				30D4690B2077559B00838A6F /* PersistencyManager.swift in Sources */,
