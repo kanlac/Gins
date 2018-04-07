@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30D469032077373600838A6F /* HTTPSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D469022077373600838A6F /* HTTPSClient.swift */; };
 		30D4690520773C4800838A6F /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690420773C4800838A6F /* NotificationExtension.swift */; };
+		30D4690720774CA500838A6F /* LastfmClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690620774CA500838A6F /* LastfmClient.swift */; };
+		30D4690920774DB200838A6F /* MusixmatchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690820774DB200838A6F /* MusixmatchClient.swift */; };
+		30D4690B2077559B00838A6F /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690A2077559B00838A6F /* PersistencyManager.swift */; };
 		30F535982074EFE0006DF67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535972074EFE0006DF67D /* AppDelegate.swift */; };
 		30F5359A2074EFE0006DF67D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535992074EFE0006DF67D /* ViewController.swift */; };
 		30F5359D2074EFE0006DF67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F5359B2074EFE0006DF67D /* Main.storyboard */; };
@@ -17,12 +19,13 @@
 		30F535AD2074F8F3006DF67D /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535AC2074F8F3006DF67D /* Track.swift */; };
 		30F535B0207508E4006DF67D /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535AF207508E4006DF67D /* LibraryAPI.swift */; };
 		30F535B2207509D9006DF67D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535B1207509D9006DF67D /* Constants.swift */; };
-		30F535B420750F18006DF67D /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535B320750F18006DF67D /* PersistencyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		30D469022077373600838A6F /* HTTPSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPSClient.swift; sourceTree = "<group>"; };
 		30D4690420773C4800838A6F /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		30D4690620774CA500838A6F /* LastfmClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastfmClient.swift; sourceTree = "<group>"; };
+		30D4690820774DB200838A6F /* MusixmatchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusixmatchClient.swift; sourceTree = "<group>"; };
+		30D4690A2077559B00838A6F /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		30F535942074EFE0006DF67D /* Gins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30F535972074EFE0006DF67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30F535992074EFE0006DF67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +36,6 @@
 		30F535AC2074F8F3006DF67D /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		30F535AF207508E4006DF67D /* LibraryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
 		30F535B1207509D9006DF67D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		30F535B320750F18006DF67D /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +68,12 @@
 		30F535962074EFE0006DF67D /* Gins */ = {
 			isa = PBXGroup;
 			children = (
+				30F535A92074F7B1006DF67D /* Model */,
+				30F535AA2074F7BE006DF67D /* View */,
+				30F535AB2074F7CA006DF67D /* Controller */,
 				30F5359B2074EFE0006DF67D /* Main.storyboard */,
 				30F535B1207509D9006DF67D /* Constants.swift */,
 				30D4690420773C4800838A6F /* NotificationExtension.swift */,
-				30F535A92074F7B1006DF67D /* Modal */,
-				30F535AA2074F7BE006DF67D /* View */,
-				30F535AB2074F7CA006DF67D /* Controller */,
 				30F535AE207508B4006DF67D /* API */,
 				30F5359E2074EFE0006DF67D /* Assets.xcassets */,
 				30F535972074EFE0006DF67D /* AppDelegate.swift */,
@@ -81,12 +83,12 @@
 			path = Gins;
 			sourceTree = "<group>";
 		};
-		30F535A92074F7B1006DF67D /* Modal */ = {
+		30F535A92074F7B1006DF67D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				30F535AC2074F8F3006DF67D /* Track.swift */,
 			);
-			path = Modal;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		30F535AA2074F7BE006DF67D /* View */ = {
@@ -108,8 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				30F535AF207508E4006DF67D /* LibraryAPI.swift */,
-				30D469022077373600838A6F /* HTTPSClient.swift */,
-				30F535B320750F18006DF67D /* PersistencyManager.swift */,
+				30D4690620774CA500838A6F /* LastfmClient.swift */,
+				30D4690820774DB200838A6F /* MusixmatchClient.swift */,
+				30D4690A2077559B00838A6F /* PersistencyManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -187,9 +190,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				30F535B2207509D9006DF67D /* Constants.swift in Sources */,
-				30F535B420750F18006DF67D /* PersistencyManager.swift in Sources */,
 				30D4690520773C4800838A6F /* NotificationExtension.swift in Sources */,
-				30D469032077373600838A6F /* HTTPSClient.swift in Sources */,
+				30D4690720774CA500838A6F /* LastfmClient.swift in Sources */,
+				30D4690920774DB200838A6F /* MusixmatchClient.swift in Sources */,
+				30D4690B2077559B00838A6F /* PersistencyManager.swift in Sources */,
 				30F5359A2074EFE0006DF67D /* ViewController.swift in Sources */,
 				30F535982074EFE0006DF67D /* AppDelegate.swift in Sources */,
 				30F535B0207508E4006DF67D /* LibraryAPI.swift in Sources */,

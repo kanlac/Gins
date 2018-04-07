@@ -1,5 +1,5 @@
 //
-//  HTTPSClient.swift
+//  LastfmClient.swift
 //  Gins
 //
 //  Created by serfusE on 2018/4/6.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HTTPSClient {
+class LastfmClient {
     
     func fetchTracks(_ url: String) -> [Track] {
         

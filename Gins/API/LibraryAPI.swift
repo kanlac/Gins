@@ -12,9 +12,19 @@ final class LibraryAPI {
     
     static let shared = LibraryAPI()
     
-    static let httpsClient = HTTPSClient()
-    static let persistencyManager = PersistencyManager()
+    private let persistencyManager = PersistencyManager()
+    private let lastfmClient = LastfmClient()
+    private let musixmatchClient = MusixmatchClient()
     
     // add notification observer..
     // init {}
+    
+    func fetchTracks(_ url: String) -> [Track] {
+        return lastfmClient.fetchTracks(url)
+    }
+    
+    func getLyrics(track: String, artist: String) -> String {
+        return musixmatchClient.getLyrics(track: track, artist: artist)
+    }
+    
 }
