@@ -10,7 +10,7 @@ import Foundation
 
 class LastfmClient {
     
-    func fetchTracks(_ url: String) -> [Track] {
+    func fetchTracks(_ url: String) {
         
         let request = URL(string: url)!
         
@@ -73,6 +73,8 @@ class LastfmClient {
                         
                     }
                     
+                    LibraryAPI.shared.saveTracks(results)
+                    
                 } catch {
                     print("Could not parse as JSON.")
                 }
@@ -82,7 +84,6 @@ class LastfmClient {
             }
             }.resume()
         
-        return results
     }
     
 }

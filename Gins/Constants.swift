@@ -8,7 +8,7 @@
 
 struct Constants {
     
-    var username = "fablr"
+    static var username = "fablr"
     
     struct Last_fm {
         static let base_url = "https://ws.audioscrobbler.com/2.0/"

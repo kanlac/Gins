@@ -22,27 +22,24 @@ final class LibraryAPI {
         return persistencyManager.getTracks()
     }
     
-    func loadData(url: String) {
-        
-        // tracks
-        let tracks = fetchTracks(url)
-        
-        // lyrics
-        let latest = tracks[0]
-        let lyrics = fetchLyrics(title: latest.title, artist: latest.artist)
-        
-        // Save to cache
+    func saveTracks(_ tracks: [Track]) {
         persistencyManager.saveTracks(tracks)
-        persistencyManager.saveLyrics(lyrics)
+    }
+    
+    func requestData(url: String) {
+        
+        let cachedTracks = persistencyManager.getTracks()
+        if cachedTracks.count > 0 {
+            // update view..
+            
+        }
+        
+        lastfmClient.fetchTracks(url)
         
     }
     
     
     // MARK: Private Methods
-    
-    private func fetchTracks(_ url: String) -> [Track] {
-        return lastfmClient.fetchTracks(url)
-    }
     
     private func fetchLyrics(title: String, artist: String) -> String {
         return musixmatchClient.fetchLyrics(title: title, artist: artist)

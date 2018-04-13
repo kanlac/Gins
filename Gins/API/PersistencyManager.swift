@@ -20,6 +20,8 @@ final class PersistencyManager {
     func saveTracks(_ tracks: [Track]) {
         self.tracks = tracks
         
+        print("newly caching data:\n \(tracks)")
+        
         NotificationCenter.default.post(name: .updateViewNK, object: self, userInfo: nil)
     }
     

@@ -16,6 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var albumLabel: UILabel!
     
+    
+    @IBAction func updateButton(_ sender: Any) {
+        print(LibraryAPI.shared.getTracks())
+    }
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -26,9 +32,8 @@ class ViewController: UIViewController {
         
         updateViewProperties()
         
-        // handle later
-        let urlString = ""
-        LibraryAPI.shared.loadData(url: urlString)
+        let urlString = Constants.Last_fm.base_url + Constants.Last_fm.Key.methods + Constants.Last_fm.Value.user_getRecentTracks + Constants.Last_fm.Key.format + Constants.Last_fm.Value.format + Constants.Last_fm.Key.api_key + Constants.Last_fm.Value.api_key + Constants.Last_fm.Key.user + Constants.username
+        LibraryAPI.shared.requestData(url: urlString)
         
     }
     
@@ -39,9 +44,12 @@ class ViewController: UIViewController {
         // latest
         if allTracks.count > 0 {
             let latest = allTracks[0]
-            titleLabel.text = latest.title
-            artistLabel.text = latest.artist
-            albumLabel.text = latest.album
+            DispatchQueue.main.async {
+                self.titleLabel.text = latest.title
+                self.artistLabel.text = latest.artist
+                self.albumLabel.text = latest.album
+            }
+            
         }
         
         // table view
