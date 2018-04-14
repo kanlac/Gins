@@ -10,7 +10,7 @@ import Foundation
 
 class MusixmatchClient {
     
-    func fetchLyrics(title: String, artist: String) -> String {
+    func fetchLyrics(title: String, artist: String) {
         let requestString = Constants.Musixmatch.base_url + Constants.Musixmatch.Method.get_lyrics + Constants.Musixmatch.Key.format + Constants.Musixmatch.Value.format + Constants.Musixmatch.Key.callback + Constants.Musixmatch.Value.callback + Constants.Musixmatch.Key.track_name + title + Constants.Musixmatch.Key.artist_name + artist + Constants.Musixmatch.Key.api_key + Constants.Musixmatch.Value.api_key
         let encodedRequestString = requestString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         let request = URL(string: encodedRequestString)!
@@ -47,8 +47,9 @@ class MusixmatchClient {
                         return
                     }
 
-                    // assign final lyrics
                     finalLyrics = lyrics_body.replacingOccurrences(of: ",\n", with: "\n").replacingOccurrences(of: ", ", with: "\n").replacingOccurrences(of: ".\n", with: "\n")
+                    LibraryAPI.shared.saveLyrics(finalLyrics!)
+                    
                 } catch {
                     print("could not parse as JSON")
                 }
@@ -59,7 +60,6 @@ class MusixmatchClient {
             }
             }.resume()
 
-        return finalLyrics!
     }
     
 }

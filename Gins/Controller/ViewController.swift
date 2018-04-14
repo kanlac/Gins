@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var allTracks = [Track]()
+    var lyrics = String()
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
@@ -27,8 +28,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(showLatestTrack(with:)), name: .updateViewNK, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showLatestTrack(with:)), name: .tracksCachedNK, object: nil)
         // add observer: lyrics data stored..
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(encodeTracks(with:)), name: .UIApplicationWillResignActive, object: nil)
         
         updateViewProperties()
         
@@ -37,9 +40,16 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: .UIApplicationWillResignActive, object: nil)
+    }
+    
     func updateViewProperties() {
         
         allTracks = LibraryAPI.shared.getTracks()
+        lyrics = LibraryAPI.shared.getLyrics()
         
         // latest
         if allTracks.count > 0 {
@@ -48,8 +58,9 @@ class ViewController: UIViewController {
                 self.titleLabel.text = latest.title
                 self.artistLabel.text = latest.artist
                 self.albumLabel.text = latest.album
+                
+                //print("lyrics:\n \(self.lyrics)")
             }
-            
         }
         
         // table view
@@ -60,6 +71,10 @@ class ViewController: UIViewController {
     // userInfo had no use, consider delegate instead?
     @objc func showLatestTrack(with notification: Notification) {
         updateViewProperties()
+    }
+    
+    @objc func encodeTracks(with notification: Notification) {
+        LibraryAPI.shared.encodeTracks()
     }
     
 }

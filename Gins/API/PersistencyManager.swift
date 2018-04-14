@@ -13,6 +13,17 @@ final class PersistencyManager {
     private var tracks = [Track]()
     private var lyrics = String()
     
+    init() {
+        let savedURL = documents.appendingPathComponent(Filenames.Tracks)
+        let data = try? Data(contentsOf: savedURL)
+        if let tracksData = data,
+            let decodedTracks = try? JSONDecoder().decode([Track].self, from: tracksData) {
+            print("load existing data.")
+            tracks = decodedTracks
+        }
+    }
+    
+    
     func getTracks() -> [Track] {
         return tracks
     }
@@ -20,9 +31,7 @@ final class PersistencyManager {
     func saveTracks(_ tracks: [Track]) {
         self.tracks = tracks
         
-        print("newly caching data:\n \(tracks)")
-        
-        NotificationCenter.default.post(name: .updateViewNK, object: self, userInfo: nil)
+        NotificationCenter.default.post(name: .tracksCachedNK, object: self, userInfo: nil)
     }
     
     func getLyrics() -> String {
@@ -32,7 +41,28 @@ final class PersistencyManager {
     func saveLyrics(_ lyrics: String) {
         self.lyrics = lyrics
         
+        print("newly caching lyrics:\n \(lyrics)")
+        
         // add post: lyrics data stored
+    }
+    
+    // MARK: Implementing archiving and serialization
+    
+    private var documents: URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+    
+    private enum Filenames {
+        static let Tracks = "tracks.json"
+    }
+    
+    func encodeTracks() {
+        let url = documents.appendingPathComponent(Filenames.Tracks)
+        let encoder = JSONEncoder()
+        guard let encodedData = try? encoder.encode(tracks) else {
+            return
+        }
+        try? encodedData.write(to: url)
     }
     
 }

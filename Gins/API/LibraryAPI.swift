@@ -16,14 +16,20 @@ final class LibraryAPI {
     private let lastfmClient = LastfmClient()
     private let musixmatchClient = MusixmatchClient()
     
-    // MARK: Public Methods
-    
     func getTracks() -> [Track] {
         return persistencyManager.getTracks()
     }
     
     func saveTracks(_ tracks: [Track]) {
         persistencyManager.saveTracks(tracks)
+    }
+    
+    func getLyrics() -> String {
+        return persistencyManager.getLyrics()
+    }
+    
+    func saveLyrics(_ lyrics: String) {
+        persistencyManager.saveLyrics(lyrics)
     }
     
     func requestData(url: String) {
@@ -33,16 +39,14 @@ final class LibraryAPI {
             // update view..
             
         }
+        // Check cached lyrics..
         
         lastfmClient.fetchTracks(url)
         
     }
     
-    
-    // MARK: Private Methods
-    
-    private func fetchLyrics(title: String, artist: String) -> String {
-        return musixmatchClient.fetchLyrics(title: title, artist: artist)
+    func encodeTracks() {
+        persistencyManager.encodeTracks()
     }
     
 }

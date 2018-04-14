@@ -11,5 +11,5 @@ import Foundation
 extension Notification.Name {
     static let loadTracksNK = Notification.Name("loadTracksNotificationKey")
     static let loadLyricsNK = Notification.Name("loadLyricsNotificationKey")
-    static let updateViewNK = Notification.Name("updateViewNotificationKey")
+    static let tracksCachedNK = Notification.Name("updateViewNotificationKey")
 }
