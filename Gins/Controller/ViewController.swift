@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var albumLabel: UILabel!
+    @IBOutlet weak var lyricsTextView: UITextView!
     
     
     @IBAction func updateButton(_ sender: Any) {
@@ -24,13 +25,12 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
         
         NotificationCenter.default.addObserver(self, selector: #selector(showLatestTrack(with:)), name: .tracksCachedNK, object: nil)
-        // add observer: lyrics data stored..
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLyrics(with:)), name: .loadLyricsNK, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(encodeTracks(with:)), name: .UIApplicationWillResignActive, object: nil)
         
         updateViewProperties()
@@ -49,23 +49,29 @@ class ViewController: UIViewController {
     func updateViewProperties() {
         
         allTracks = LibraryAPI.shared.getTracks()
-        lyrics = LibraryAPI.shared.getLyrics()
         
-        // latest
+        // show latest & start fetch lyrics
         if allTracks.count > 0 {
             let latest = allTracks[0]
             DispatchQueue.main.async {
                 self.titleLabel.text = latest.title
                 self.artistLabel.text = latest.artist
                 self.albumLabel.text = latest.album
-                
-                //print("lyrics:\n \(self.lyrics)")
             }
+            
+            LibraryAPI.shared.fetchLyrics(title: latest.title, artist: latest.artist)
         }
         
         // table view
         
         
+    }
+    
+    @objc func updateLyrics(with notification: Notification) {
+        lyrics = LibraryAPI.shared.getLyrics()
+        DispatchQueue.main.async {
+            self.lyricsTextView.text = self.lyrics
+        }
     }
     
     // userInfo had no use, consider delegate instead?

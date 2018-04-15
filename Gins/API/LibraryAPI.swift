@@ -32,6 +32,10 @@ final class LibraryAPI {
         persistencyManager.saveLyrics(lyrics)
     }
     
+    func fetchLyrics(title: String, artist: String) {
+        musixmatchClient.fetchLyrics(title: title, artist: artist)
+    }
+    
     func requestData(url: String) {
         
         let cachedTracks = persistencyManager.getTracks()

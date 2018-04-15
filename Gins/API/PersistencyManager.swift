@@ -41,9 +41,7 @@ final class PersistencyManager {
     func saveLyrics(_ lyrics: String) {
         self.lyrics = lyrics
         
-        print("newly caching lyrics:\n \(lyrics)")
-        
-        // add post: lyrics data stored
+        NotificationCenter.default.post(name: .loadLyricsNK, object: nil)
     }
     
     // MARK: Implementing archiving and serialization

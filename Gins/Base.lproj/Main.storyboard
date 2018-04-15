@@ -105,15 +105,25 @@
                                                     <constraint firstAttribute="height" constant="597" id="aUb-9c-Ysa"/>
                                                 </constraints>
                                             </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vdd-Xa-CqB" userLabel="Lyrics text">
+                                                <rect key="frame" x="16" y="191" width="343" height="326"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="wlb-Ro-djz" firstAttribute="leading" secondItem="AQa-KJ-P5G" secondAttribute="leading" constant="4" id="1JX-bK-RIh"/>
                                             <constraint firstAttribute="height" constant="1200" id="6Eq-lc-E6R"/>
                                             <constraint firstAttribute="trailing" secondItem="wlb-Ro-djz" secondAttribute="trailing" constant="10" id="6ea-WQ-VYw"/>
                                             <constraint firstAttribute="trailing" secondItem="S4K-Ka-hwr" secondAttribute="trailing" constant="10" id="6rW-kM-oAv"/>
+                                            <constraint firstItem="vdd-Xa-CqB" firstAttribute="bottom" secondItem="wlb-Ro-djz" secondAttribute="bottom" id="Hv3-Vd-p3L"/>
                                             <constraint firstItem="S4K-Ka-hwr" firstAttribute="leading" secondItem="AQa-KJ-P5G" secondAttribute="leading" constant="4" id="Og3-pc-9GZ"/>
                                             <constraint firstAttribute="trailing" secondItem="dqR-ji-jHb" secondAttribute="trailing" constant="10" id="PTs-Sz-rg8"/>
+                                            <constraint firstItem="vdd-Xa-CqB" firstAttribute="leading" secondItem="wlb-Ro-djz" secondAttribute="leading" constant="12" id="W4r-6A-kDd"/>
                                             <constraint firstItem="5xW-Xp-qDZ" firstAttribute="leading" secondItem="AQa-KJ-P5G" secondAttribute="leading" constant="4" id="aIR-12-sHB"/>
+                                            <constraint firstItem="vdd-Xa-CqB" firstAttribute="centerX" secondItem="AQa-KJ-P5G" secondAttribute="centerX" id="bCo-vP-CcA"/>
+                                            <constraint firstItem="vdd-Xa-CqB" firstAttribute="top" secondItem="wlb-Ro-djz" secondAttribute="top" id="ccu-VS-lsj"/>
                                             <constraint firstAttribute="trailing" secondItem="5xW-Xp-qDZ" secondAttribute="trailing" constant="10" id="jBZ-62-JTe"/>
                                             <constraint firstItem="dqR-ji-jHb" firstAttribute="top" secondItem="AQa-KJ-P5G" secondAttribute="top" constant="15" id="m6M-LA-81q"/>
                                             <constraint firstItem="S4K-Ka-hwr" firstAttribute="top" secondItem="dqR-ji-jHb" secondAttribute="bottom" constant="7" id="mxa-rx-iie"/>
@@ -148,6 +158,7 @@
                     <connections>
                         <outlet property="albumLabel" destination="ebo-Rn-RoU" id="gdT-7b-3Lh"/>
                         <outlet property="artistLabel" destination="IAB-8R-1If" id="DR1-Jd-Ujg"/>
+                        <outlet property="lyricsTextView" destination="vdd-Xa-CqB" id="haH-dz-w25"/>
                         <outlet property="titleLabel" destination="5So-P5-vvg" id="0MD-1z-CDS"/>
                     </connections>
                 </viewController>
