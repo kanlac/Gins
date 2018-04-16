@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var albumLabel: UILabel!
     @IBOutlet weak var lyricsTextView: UITextView!
-    
+    @IBOutlet weak var latestCover: UIImageView!
     
     @IBAction func updateButton(_ sender: Any) {
         print(LibraryAPI.shared.getTracks())
@@ -33,8 +33,6 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateLyrics(with:)), name: .loadLyricsNK, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(encodeTracks(with:)), name: .UIApplicationWillResignActive, object: nil)
         
-        updateViewProperties()
-        
         let urlString = Constants.Last_fm.base_url + Constants.Last_fm.Key.methods + Constants.Last_fm.Value.user_getRecentTracks + Constants.Last_fm.Key.format + Constants.Last_fm.Value.format + Constants.Last_fm.Key.api_key + Constants.Last_fm.Value.api_key + Constants.Last_fm.Key.user + Constants.username
         LibraryAPI.shared.requestData(url: urlString)
         
@@ -48,15 +46,23 @@ class ViewController: UIViewController {
     
     func updateViewProperties() {
         
-        allTracks = LibraryAPI.shared.getTracks()
-        
-        // show latest & start fetch lyrics
         if allTracks.count > 0 {
             let latest = allTracks[0]
+            
+            var cover = UIImage()
+            if let mediumCoverURLString = latest.coverURL[.medium] {
+                let mediumCoverURL = URL(string: mediumCoverURLString)!
+                if let coverData = try? Data(contentsOf: mediumCoverURL) {
+                    cover = UIImage(data: coverData)!
+                }
+            }
+            
             DispatchQueue.main.async {
                 self.titleLabel.text = latest.title
                 self.artistLabel.text = latest.artist
                 self.albumLabel.text = latest.album
+                self.lyricsTextView.text = ""
+                self.latestCover.image = cover
             }
             
             LibraryAPI.shared.fetchLyrics(title: latest.title, artist: latest.artist)
@@ -76,6 +82,7 @@ class ViewController: UIViewController {
     
     // userInfo had no use, consider delegate instead?
     @objc func showLatestTrack(with notification: Notification) {
+        allTracks = LibraryAPI.shared.getTracks()
         updateViewProperties()
     }
     

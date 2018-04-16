@@ -106,9 +106,9 @@
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vdd-Xa-CqB" userLabel="Lyrics text">
-                                                <rect key="frame" x="16" y="191" width="343" height="326"/>
+                                                <rect key="frame" x="19" y="191" width="337" height="326"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -120,7 +120,7 @@
                                             <constraint firstItem="vdd-Xa-CqB" firstAttribute="bottom" secondItem="wlb-Ro-djz" secondAttribute="bottom" id="Hv3-Vd-p3L"/>
                                             <constraint firstItem="S4K-Ka-hwr" firstAttribute="leading" secondItem="AQa-KJ-P5G" secondAttribute="leading" constant="4" id="Og3-pc-9GZ"/>
                                             <constraint firstAttribute="trailing" secondItem="dqR-ji-jHb" secondAttribute="trailing" constant="10" id="PTs-Sz-rg8"/>
-                                            <constraint firstItem="vdd-Xa-CqB" firstAttribute="leading" secondItem="wlb-Ro-djz" secondAttribute="leading" constant="12" id="W4r-6A-kDd"/>
+                                            <constraint firstItem="vdd-Xa-CqB" firstAttribute="leading" secondItem="wlb-Ro-djz" secondAttribute="leading" constant="15" id="W4r-6A-kDd"/>
                                             <constraint firstItem="5xW-Xp-qDZ" firstAttribute="leading" secondItem="AQa-KJ-P5G" secondAttribute="leading" constant="4" id="aIR-12-sHB"/>
                                             <constraint firstItem="vdd-Xa-CqB" firstAttribute="centerX" secondItem="AQa-KJ-P5G" secondAttribute="centerX" id="bCo-vP-CcA"/>
                                             <constraint firstItem="vdd-Xa-CqB" firstAttribute="top" secondItem="wlb-Ro-djz" secondAttribute="top" id="ccu-VS-lsj"/>
@@ -158,6 +158,7 @@
                     <connections>
                         <outlet property="albumLabel" destination="ebo-Rn-RoU" id="gdT-7b-3Lh"/>
                         <outlet property="artistLabel" destination="IAB-8R-1If" id="DR1-Jd-Ujg"/>
+                        <outlet property="latestCover" destination="7jL-Oz-Wdn" id="Tnz-AZ-GFy"/>
                         <outlet property="lyricsTextView" destination="vdd-Xa-CqB" id="haH-dz-w25"/>
                         <outlet property="titleLabel" destination="5So-P5-vvg" id="0MD-1z-CDS"/>
                     </connections>

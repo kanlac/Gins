@@ -23,6 +23,6 @@ struct Track: Codable {
 
 extension Track: CustomStringConvertible {
     var description: String {
-        return "------\n" + "track title: \(title)\n" + "artist: \(artist)\n" + "album: \(album)\n" + "is playing: \(isPlaying)\n" + "------"
+        return "------\n" + "track title: \(title)\n" + "artist: \(artist)\n" + "album: \(album)\n" + "is playing: \(isPlaying)\n" + "Cover URL: \(coverURL[.large]!)" + "------"
     }
 }
