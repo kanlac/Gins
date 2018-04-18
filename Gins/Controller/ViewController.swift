@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     var allTracks = [Track]()
     var lyrics = String()
+    let urlString = Constants.Last_fm.base_url + Constants.Last_fm.Key.methods + Constants.Last_fm.Value.user_getRecentTracks + Constants.Last_fm.Key.format + Constants.Last_fm.Value.format + Constants.Last_fm.Key.api_key + Constants.Last_fm.Value.api_key + Constants.Last_fm.Key.user + Constants.username
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
@@ -20,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var latestCover: UIImageView!
     
     @IBAction func updateButton(_ sender: Any) {
-        print(LibraryAPI.shared.getTracks())
+        LibraryAPI.shared.requestData(url: urlString)
     }
     
     
@@ -33,7 +34,6 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateLyrics(with:)), name: .loadLyricsNK, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(encodeTracks(with:)), name: .UIApplicationWillResignActive, object: nil)
         
-        let urlString = Constants.Last_fm.base_url + Constants.Last_fm.Key.methods + Constants.Last_fm.Value.user_getRecentTracks + Constants.Last_fm.Key.format + Constants.Last_fm.Value.format + Constants.Last_fm.Key.api_key + Constants.Last_fm.Value.api_key + Constants.Last_fm.Key.user + Constants.username
         LibraryAPI.shared.requestData(url: urlString)
         
     }
@@ -50,11 +50,8 @@ class ViewController: UIViewController {
             let latest = allTracks[0]
             
             var cover = UIImage()
-            if let mediumCoverURLString = latest.coverURL[.medium] {
-                let mediumCoverURL = URL(string: mediumCoverURLString)!
-                if let coverData = try? Data(contentsOf: mediumCoverURL) {
-                    cover = UIImage(data: coverData)!
-                }
+            if let mediumCoverURLString = latest.coverURL[.medium], let mediumCoverURL = URL(string: mediumCoverURLString), let coverData = try? Data(contentsOf: mediumCoverURL) {
+                cover = UIImage(data: coverData)!
             }
             
             DispatchQueue.main.async {
@@ -76,7 +73,10 @@ class ViewController: UIViewController {
     @objc func updateLyrics(with notification: Notification) {
         lyrics = LibraryAPI.shared.getLyrics()
         DispatchQueue.main.async {
-            self.lyricsTextView.text = self.lyrics
+            let style = NSMutableParagraphStyle()
+            style.lineSpacing = 7
+            let attributes = [NSAttributedStringKey.paragraphStyle : style, NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 19)!]
+            self.lyricsTextView.attributedText = NSAttributedString(string: self.lyrics, attributes:attributes)
         }
     }
     

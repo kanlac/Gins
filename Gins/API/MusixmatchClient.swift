@@ -35,7 +35,7 @@ class MusixmatchClient {
                         return
                     }
                     guard let body = message["body"] as? [String: AnyObject] else {
-                        print("body error.")
+                        print("body error in Musixmatch.")
                         return
                     }
                     guard let lyricsDic = body["lyrics"] as? [String: AnyObject] else {
