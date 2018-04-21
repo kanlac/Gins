@@ -29,7 +29,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
-        
+        titleLabel.speed = .rate(50)
+        titleLabel.fadeLength = 10
+        titleLabel.animationDelay = 5
         
         NotificationCenter.default.addObserver(self, selector: #selector(showLatestTrack(with:)), name: .updateTracksViewNK, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateLyrics(with:)), name: .loadLyricsNK, object: nil)
