@@ -36,17 +36,9 @@ final class LibraryAPI {
         musixmatchClient.fetchLyrics(title: title, artist: artist)
     }
     
+    // request for track list, then request lyrics automatically
     func requestData(url: String) {
-        
-        let cachedTracks = persistencyManager.getTracks()
-        if cachedTracks.count > 0 {
-            // update view..
-            NotificationCenter.default.post(name: .updateTracksViewNK, object: self, userInfo: nil)
-        }
-        // Check cached lyrics..
-        
         lastfmClient.fetchTracks(url)
-        
     }
     
     func encodeTracks() {
