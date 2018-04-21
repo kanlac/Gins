@@ -41,7 +41,7 @@ final class LibraryAPI {
         let cachedTracks = persistencyManager.getTracks()
         if cachedTracks.count > 0 {
             // update view..
-            
+            NotificationCenter.default.post(name: .updateTracksViewNK, object: self, userInfo: nil)
         }
         // Check cached lyrics..
         

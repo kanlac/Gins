@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30023893208B358F0041A59A /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30023892208B358F0041A59A /* MarqueeLabel.swift */; };
 		302E842B2078E5A8008F417E /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E842A2078E5A8008F417E /* NotificationExtension.swift */; };
 		30D4690720774CA500838A6F /* LastfmClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690620774CA500838A6F /* LastfmClient.swift */; };
 		30D4690920774DB200838A6F /* MusixmatchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690820774DB200838A6F /* MusixmatchClient.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30023892208B358F0041A59A /* MarqueeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
 		302E842A2078E5A8008F417E /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		30D4690620774CA500838A6F /* LastfmClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastfmClient.swift; sourceTree = "<group>"; };
 		30D4690820774DB200838A6F /* MusixmatchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusixmatchClient.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				302E842A2078E5A8008F417E /* NotificationExtension.swift */,
+				30023892208B358F0041A59A /* MarqueeLabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				30D4690B2077559B00838A6F /* PersistencyManager.swift in Sources */,
 				30F5359A2074EFE0006DF67D /* ViewController.swift in Sources */,
 				30F535982074EFE0006DF67D /* AppDelegate.swift in Sources */,
+				30023893208B358F0041A59A /* MarqueeLabel.swift in Sources */,
 				30F535B0207508E4006DF67D /* LibraryAPI.swift in Sources */,
 				30F535AD2074F8F3006DF67D /* Track.swift in Sources */,
 			);

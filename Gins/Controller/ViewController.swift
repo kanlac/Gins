@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var lyrics = String()
     let urlString = Constants.Last_fm.base_url + Constants.Last_fm.Key.methods + Constants.Last_fm.Value.user_getRecentTracks + Constants.Last_fm.Key.format + Constants.Last_fm.Value.format + Constants.Last_fm.Key.api_key + Constants.Last_fm.Value.api_key + Constants.Last_fm.Key.user + Constants.username
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: MarqueeLabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var albumLabel: UILabel!
     @IBOutlet weak var lyricsTextView: UITextView!
@@ -30,7 +30,8 @@ class ViewController: UIViewController {
         
         view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(showLatestTrack(with:)), name: .tracksCachedNK, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showLatestTrack(with:)), name: .updateTracksViewNK, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateLyrics(with:)), name: .loadLyricsNK, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(encodeTracks(with:)), name: .UIApplicationWillResignActive, object: nil)
         
@@ -55,7 +56,7 @@ class ViewController: UIViewController {
             }
             
             DispatchQueue.main.async {
-                self.titleLabel.text = latest.title
+                self.titleLabel.text = latest.title + "   "
                 self.artistLabel.text = latest.artist
                 self.albumLabel.text = latest.album
                 self.lyricsTextView.text = ""

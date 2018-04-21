@@ -31,7 +31,7 @@ final class PersistencyManager {
     func saveTracks(_ tracks: [Track]) {
         self.tracks = tracks
         
-        NotificationCenter.default.post(name: .tracksCachedNK, object: self, userInfo: nil)
+        NotificationCenter.default.post(name: .updateTracksViewNK, object: self, userInfo: nil)
     }
     
     func getLyrics() -> String {
