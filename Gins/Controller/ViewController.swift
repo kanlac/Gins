@@ -8,6 +8,14 @@
 
 import UIKit
 
+class tracksTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitileLabel: UILabel!
+    
+}
+
 class ViewController: UIViewController {
     
     var allTracks = [Track]()
@@ -25,6 +33,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lyricsTextView: UITextView!
     @IBOutlet weak var latestCover: UIImageView!
     @IBOutlet weak var updateButtonOutlet: UIButton!
+    @IBOutlet weak var tracksTableView: UITableView!
     
     @IBAction func updateButton(_ sender: Any) {
         LibraryAPI.shared.requestData(url: urlString)
@@ -46,6 +55,10 @@ class ViewController: UIViewController {
         titleLabel.speed = .rate(50)
         titleLabel.fadeLength = 10
         titleLabel.animationDelay = 5
+        
+        tracksTableView.delegate = self
+        tracksTableView.dataSource = self
+        tracksTableView.rowHeight = 60
         
         NotificationCenter.default.addObserver(self, selector: #selector(showLatestTrack(with:)), name: .updateTracksViewNK, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateLyrics(with:)), name: .loadLyricsNK, object: nil)
@@ -148,14 +161,35 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return allTracks.count - 1
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! tracksTableViewCell
+        let currentTrack = allTracks[indexPath.row + 1]
+        cell.titleLabel.text = currentTrack.title
+        cell.subtitileLabel.text = currentTrack.artist
+        
+        return cell
     }
 }
 
 extension ViewController: UITableViewDelegate {
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,6 +9,7 @@
 struct Constants {
     
     static var username = "fablr"
+    static var cellIdentifier = "cell"
     
     struct Last_fm {
         static let base_url = "https://ws.audioscrobbler.com/2.0/"
