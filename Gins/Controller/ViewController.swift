@@ -27,6 +27,8 @@ class ViewController: UIViewController {
         case loaded
     }
     
+    // MARK: Interface Builder
+    
     @IBOutlet weak var titleLabel: MarqueeLabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var albumLabel: UILabel!
@@ -46,6 +48,11 @@ class ViewController: UIViewController {
     
     }
     
+    @IBAction func requestITunesCover(_ sender: Any) {
+        
+    }
+    
+    // MARK: View Controller Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +66,7 @@ class ViewController: UIViewController {
         tracksTableView.delegate = self
         tracksTableView.dataSource = self
         tracksTableView.rowHeight = 60
+        tracksTableView.separatorStyle = .none
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateTracksView(with:)), name: .updateTracksViewNK, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateLyrics(with:)), name: .loadLyricsNK, object: nil)
@@ -88,13 +96,15 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: .UIApplicationWillResignActive, object: nil)
     }
     
+    // MARK: View Controller Methods
+    
     func updateViewProperties() {
         
         if allTracks.count > 0 {
             let latest = allTracks[0]
             
             var cover = UIImage()
-            if let mediumCoverURLString = latest.coverURL[.medium], let mediumCoverURL = URL(string: mediumCoverURLString), let coverData = try? Data(contentsOf: mediumCoverURL) {
+            if let largeCoverURLString = latest.coverURL[.large], let largeCoverURL = URL(string: largeCoverURLString), let coverData = try? Data(contentsOf: largeCoverURL) {
                 cover = UIImage(data: coverData)!
             }
             
@@ -137,6 +147,8 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: Notification Methods
+    
     @objc func updateLyrics(with notification: Notification) {
         lyrics = LibraryAPI.shared.getLyrics()
         if lyrics == "" {
@@ -158,6 +170,8 @@ class ViewController: UIViewController {
     
 }
 
+// MARK: Extensions
+
 extension ViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -169,6 +183,12 @@ extension ViewController: UITableViewDataSource {
         let currentTrack = allTracks[indexPath.row + 1]
         cell.titleLabel.text = currentTrack.title
         cell.subtitileLabel.text = currentTrack.artist
+        
+        var cover = UIImage()
+        if let coverURLString = currentTrack.coverURL[.medium], let coverURL = URL(string: coverURLString), let coverData = try? Data(contentsOf: coverURL) {
+            cover = UIImage(data: coverData)!
+        }
+        cell.coverImageView.image = cover
         
         return cell
     }

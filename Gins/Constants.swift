@@ -55,5 +55,21 @@ struct Constants {
             static let api_key = "0d3981a4659e90c72a995e4d1179c5af"
         }
     }
+    
+    struct iTunesStore {
+        static let base_url = "https://itunes.apple.com/search?"
+        
+        struct Key {
+            static let term = "term="
+            static let media = "&media="
+            static let limit = "&limit="
+            static let entity = "&entity="
+        }
+        
+        struct Value {
+            static let media = "music"
+            static let entity = "album"
+        }
+    }
 
 }
