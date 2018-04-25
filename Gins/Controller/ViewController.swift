@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         tracksTableView.dataSource = self
         tracksTableView.rowHeight = 60
         
-        NotificationCenter.default.addObserver(self, selector: #selector(showLatestTrack(with:)), name: .updateTracksViewNK, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTracksView(with:)), name: .updateTracksViewNK, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateLyrics(with:)), name: .loadLyricsNK, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(encodeTracks(with:)), name: .UIApplicationWillResignActive, object: nil)
         
@@ -102,17 +102,17 @@ class ViewController: UIViewController {
                 self.titleLabel.text = latest.title + "   "
                 self.artistLabel.text = latest.artist
                 self.albumLabel.text = latest.album
-                self.lyricsTextView.text = ""
                 self.latestCover.image = cover
+                
+                self.lyricsTextView.text = ""
+                
+                self.tracksTableView.reloadData()
             }
             
             LibraryAPI.shared.fetchLyrics(title: latest.title, artist: latest.artist)
         }
         
         updateLyricsView(status: .loading)
-        
-        // table view
-        
         
     }
     
@@ -147,7 +147,7 @@ class ViewController: UIViewController {
     }
     
     // load cache
-    @objc func showLatestTrack(with notification: Notification) {
+    @objc func updateTracksView(with notification: Notification) {
         allTracks = LibraryAPI.shared.getTracks()
         updateViewProperties()
     }
