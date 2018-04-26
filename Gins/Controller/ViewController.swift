@@ -49,7 +49,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func requestITunesCover(_ sender: Any) {
+        let alert = UIAlertController(title: "Choose Album", message: nil, preferredStyle: .actionSheet)
         
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+//            NSLog("The \"OK\" alert occured.")
+//        }))
+        let EditAction = UIAlertAction(title: "Edit", style: .default) { action in
+            print(action)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            print(action)
+        }
+        
+        alert.addAction(EditAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: View Controller Overrides
@@ -87,6 +102,8 @@ class ViewController: UIViewController {
         
         // request
         LibraryAPI.shared.requestData(url: urlString)
+        
+        
         
     }
     
