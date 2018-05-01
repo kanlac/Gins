@@ -171,7 +171,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="R"/>
                                                 <connections>
-                                                    <action selector="requestITunesCover:" destination="8n0-9o-Blb" eventType="touchUpInside" id="248-kL-2Ci"/>
+                                                    <segue destination="0Oq-cm-jQX" kind="popoverPresentation" popoverAnchorView="qho-Xa-P8D" id="Uf9-ma-BXs">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -237,6 +239,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dj-fF-FbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="282.39999999999998" y="-485.75712143928041"/>
+        </scene>
+        <!--Pick ArtworkVC-->
+        <scene sceneID="lID-aB-A3M">
+            <objects>
+                <viewController id="0Oq-cm-jQX" customClass="PickArtworkVC" customModule="Gins" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zql-4a-WqI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mm-fi-LVY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Pick Artwork" id="XMS-C1-Srz">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wLG-7W-2ZR">
+                                            <connections>
+                                                <action selector="DismissButton:" destination="0Oq-cm-jQX" id="P26-Ik-OpV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Bie-wi-3me"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vQD-rk-BC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1215" y="-725"/>
         </scene>
     </scenes>
     <resources>
