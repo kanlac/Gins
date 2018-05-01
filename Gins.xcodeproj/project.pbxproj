@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		30023893208B358F0041A59A /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30023892208B358F0041A59A /* MarqueeLabel.swift */; };
-		302D51C62090DCD7002F8ACD /* ITunesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D51C52090DCD7002F8ACD /* ITunesStore.swift */; };
 		302E842B2078E5A8008F417E /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E842A2078E5A8008F417E /* NotificationExtension.swift */; };
 		30779C6720982B9100E42BAC /* PickArtworkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30779C6620982B9100E42BAC /* PickArtworkVC.swift */; };
+		30779C692098343C00E42BAC /* ITunesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30779C682098343C00E42BAC /* ITunesClient.swift */; };
+		30779C6B2098379400E42BAC /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30779C6A2098379400E42BAC /* Artwork.swift */; };
 		30D4690720774CA500838A6F /* LastfmClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690620774CA500838A6F /* LastfmClient.swift */; };
 		30D4690920774DB200838A6F /* MusixmatchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690820774DB200838A6F /* MusixmatchClient.swift */; };
 		30D4690B2077559B00838A6F /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690A2077559B00838A6F /* PersistencyManager.swift */; };
@@ -26,9 +27,10 @@
 
 /* Begin PBXFileReference section */
 		30023892208B358F0041A59A /* MarqueeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
-		302D51C52090DCD7002F8ACD /* ITunesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesStore.swift; sourceTree = "<group>"; };
 		302E842A2078E5A8008F417E /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		30779C6620982B9100E42BAC /* PickArtworkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickArtworkVC.swift; sourceTree = "<group>"; };
+		30779C682098343C00E42BAC /* ITunesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesClient.swift; sourceTree = "<group>"; };
+		30779C6A2098379400E42BAC /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		30D4690620774CA500838A6F /* LastfmClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastfmClient.swift; sourceTree = "<group>"; };
 		30D4690820774DB200838A6F /* MusixmatchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusixmatchClient.swift; sourceTree = "<group>"; };
 		30D4690A2077559B00838A6F /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				30F535AC2074F8F3006DF67D /* Track.swift */,
+				30779C6A2098379400E42BAC /* Artwork.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,10 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				30F535AF207508E4006DF67D /* LibraryAPI.swift */,
+				30779C682098343C00E42BAC /* ITunesClient.swift */,
 				30D4690620774CA500838A6F /* LastfmClient.swift */,
 				30D4690820774DB200838A6F /* MusixmatchClient.swift */,
 				30D4690A2077559B00838A6F /* PersistencyManager.swift */,
-				302D51C52090DCD7002F8ACD /* ITunesStore.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -210,10 +213,11 @@
 				30F535B2207509D9006DF67D /* Constants.swift in Sources */,
 				30D4690720774CA500838A6F /* LastfmClient.swift in Sources */,
 				30D4690920774DB200838A6F /* MusixmatchClient.swift in Sources */,
+				30779C692098343C00E42BAC /* ITunesClient.swift in Sources */,
 				30779C6720982B9100E42BAC /* PickArtworkVC.swift in Sources */,
 				30D4690B2077559B00838A6F /* PersistencyManager.swift in Sources */,
+				30779C6B2098379400E42BAC /* Artwork.swift in Sources */,
 				30F5359A2074EFE0006DF67D /* ViewController.swift in Sources */,
-				302D51C62090DCD7002F8ACD /* ITunesStore.swift in Sources */,
 				30F535982074EFE0006DF67D /* AppDelegate.swift in Sources */,
 				30023893208B358F0041A59A /* MarqueeLabel.swift in Sources */,
 				30F535B0207508E4006DF67D /* LibraryAPI.swift in Sources */,

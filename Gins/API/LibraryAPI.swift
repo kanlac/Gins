@@ -15,6 +15,7 @@ final class LibraryAPI {
     private let persistencyManager = PersistencyManager()
     private let lastfmClient = LastfmClient()
     private let musixmatchClient = MusixmatchClient()
+    private let iTunesClient = ITunesClient()
     
     func getTracks() -> [Track] {
         return persistencyManager.getTracks()
@@ -43,6 +44,10 @@ final class LibraryAPI {
     
     func encodeTracks() {
         persistencyManager.encodeTracks()
+    }
+    
+    func fetchArtworks(with query: String) -> [Artwork] {
+        return iTunesClient.fetchArtworks(with: query)
     }
     
 }

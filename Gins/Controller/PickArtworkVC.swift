@@ -22,6 +22,7 @@ class PickArtworkVC: UIViewController {
         super.viewDidLoad()
         
         queryTextField.text = query
+        LibraryAPI.shared.fetchArtworks(with: query!)
     }
     
 }
