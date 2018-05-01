@@ -11,7 +11,17 @@ import UIKit
 
 class PickArtworkVC: UIViewController {
     
+    var query: String?
+    
+    @IBOutlet weak var queryTextField: UITextField!
     @IBAction func DismissButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        queryTextField.text = query
+    }
+    
 }

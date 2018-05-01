@@ -90,6 +90,13 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: .UIApplicationWillResignActive, object: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let latest = allTracks[0]
+        let query = latest.album + " " + latest.artist
+        let destinationVC = segue.destination as! PickArtworkVC
+        destinationVC.query = query
+    }
+    
     // MARK: View Controller Methods
     
     func updateViewProperties() {

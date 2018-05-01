@@ -10,9 +10,7 @@
 		30023893208B358F0041A59A /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30023892208B358F0041A59A /* MarqueeLabel.swift */; };
 		302D51C62090DCD7002F8ACD /* ITunesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D51C52090DCD7002F8ACD /* ITunesStore.swift */; };
 		302E842B2078E5A8008F417E /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E842A2078E5A8008F417E /* NotificationExtension.swift */; };
-		305190F220934CB70053A3CD /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305190F120934CB70053A3CD /* UIImageExtension.swift */; };
 		30779C6720982B9100E42BAC /* PickArtworkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30779C6620982B9100E42BAC /* PickArtworkVC.swift */; };
-		30CC7FD72095B15E007E2684 /* DetailedAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC7FD62095B15E007E2684 /* DetailedAlertAction.swift */; };
 		30D4690720774CA500838A6F /* LastfmClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690620774CA500838A6F /* LastfmClient.swift */; };
 		30D4690920774DB200838A6F /* MusixmatchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690820774DB200838A6F /* MusixmatchClient.swift */; };
 		30D4690B2077559B00838A6F /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690A2077559B00838A6F /* PersistencyManager.swift */; };
@@ -30,9 +28,7 @@
 		30023892208B358F0041A59A /* MarqueeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
 		302D51C52090DCD7002F8ACD /* ITunesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesStore.swift; sourceTree = "<group>"; };
 		302E842A2078E5A8008F417E /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
-		305190F120934CB70053A3CD /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		30779C6620982B9100E42BAC /* PickArtworkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickArtworkVC.swift; sourceTree = "<group>"; };
-		30CC7FD62095B15E007E2684 /* DetailedAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedAlertAction.swift; sourceTree = "<group>"; };
 		30D4690620774CA500838A6F /* LastfmClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastfmClient.swift; sourceTree = "<group>"; };
 		30D4690820774DB200838A6F /* MusixmatchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusixmatchClient.swift; sourceTree = "<group>"; };
 		30D4690A2077559B00838A6F /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
@@ -64,8 +60,6 @@
 			children = (
 				302E842A2078E5A8008F417E /* NotificationExtension.swift */,
 				30023892208B358F0041A59A /* MarqueeLabel.swift */,
-				305190F120934CB70053A3CD /* UIImageExtension.swift */,
-				30CC7FD62095B15E007E2684 /* DetailedAlertAction.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -218,14 +212,12 @@
 				30D4690920774DB200838A6F /* MusixmatchClient.swift in Sources */,
 				30779C6720982B9100E42BAC /* PickArtworkVC.swift in Sources */,
 				30D4690B2077559B00838A6F /* PersistencyManager.swift in Sources */,
-				30CC7FD72095B15E007E2684 /* DetailedAlertAction.swift in Sources */,
 				30F5359A2074EFE0006DF67D /* ViewController.swift in Sources */,
 				302D51C62090DCD7002F8ACD /* ITunesStore.swift in Sources */,
 				30F535982074EFE0006DF67D /* AppDelegate.swift in Sources */,
 				30023893208B358F0041A59A /* MarqueeLabel.swift in Sources */,
 				30F535B0207508E4006DF67D /* LibraryAPI.swift in Sources */,
 				30F535AD2074F8F3006DF67D /* Track.swift in Sources */,
-				305190F220934CB70053A3CD /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
