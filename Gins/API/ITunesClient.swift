@@ -20,26 +20,36 @@ class ITunesClient {
         var artworks = [Artwork]()
 
         URLSession.shared.dataTask(with: request) { (data, error, response) in
-            if error == nil {
-
-                guard let data = data else {
-                    print("No data returned.")
+            
+            guard let data = data else {
+                print("No data returned.")
+                return
+            }
+            
+            var parseResult: [String: AnyObject]
+            
+            do {
+                parseResult = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
+                
+                guard let results = parseResult["results"] as? [NSDictionary], let resultCount = parseResult["resultCount"] as? Int else {
+                    print("results & resultCount parse error.")
                     return
                 }
-
-                var parseResult: [String: AnyObject]
-
-                do {
-                    parseResult = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
-                    print(parseResult)
-
-                } catch {
-                    print("Could not parse as JSON.")
+                
+                let body = results[0]
+                guard let collectionName = body["collectionName"],
+                    let artistName = body["artistName"],
+                    let artworkUrl100 = body["artworkUrl100"] else {
+                        print("Artworks data parse error.")
+                        return
                 }
+                
+                // Save as Artwork object..
 
-            } else {
-                print(error ?? "Error (no message)")
+            } catch {
+                print("Could not parse as JSON.")
             }
+            
         }.resume()
         
         return artworks
