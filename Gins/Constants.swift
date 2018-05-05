@@ -10,6 +10,7 @@ struct Constants {
     
     static var username = "fablr"
     static var cellIdentifier = "cell"
+    static var artworkCellIdentifier = "artworkCell"
     
     struct Last_fm {
         static let base_url = "https://ws.audioscrobbler.com/2.0/"
