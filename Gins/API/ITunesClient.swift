@@ -11,7 +11,7 @@ import os.log
 
 class ITunesClient {
     
-    func fetchArtworks(with query: String) -> [Artwork] {
+    func fetchArtworks(with query: String) {
         
         let requestString = Constants.iTunesStore.base_url + Constants.iTunesStore.Key.term + query + Constants.iTunesStore.Key.media + Constants.iTunesStore.Value.media + Constants.iTunesStore.Key.entity + Constants.iTunesStore.Value.entity
         let encodedRequestString = requestString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
@@ -36,15 +36,25 @@ class ITunesClient {
                     return
                 }
                 
-                let body = results[0]
-                guard let collectionName = body["collectionName"],
-                    let artistName = body["artistName"],
-                    let artworkUrl100 = body["artworkUrl100"] else {
-                        print("Artworks data parse error.")
-                        return
+                for i in 0..<resultCount {
+                    
+                    let body = results[i]
+                    guard let collectionName = body["collectionName"],
+                        let artistName = body["artistName"],
+                        let artworkUrl100 = body["artworkUrl100"] else {
+                            print("Artworks data parse error. Number: \(i)")
+                            return
+                    }
+                    
+                    // Save as Artwork object..
+                    
+                    let artwork = Artwork(title: collectionName as! String, artist: artistName as! String, artworkURL: artworkUrl100 as! String)
+                    
+                    artworks.append(artwork)
+                    
                 }
                 
-                // Save as Artwork object..
+                LibraryAPI.shared.saveArtworks(artworks)
 
             } catch {
                 print("Could not parse as JSON.")
@@ -52,7 +62,6 @@ class ITunesClient {
             
         }.resume()
         
-        return artworks
     }
     
 }

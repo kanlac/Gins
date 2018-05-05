@@ -46,8 +46,16 @@ final class LibraryAPI {
         persistencyManager.encodeTracks()
     }
     
-    func fetchArtworks(with query: String) -> [Artwork] {
+    func fetchArtworks(with query: String) {
         return iTunesClient.fetchArtworks(with: query)
+    }
+    
+    func getArtworks() -> [Artwork] {
+        return persistencyManager.getArtworks()
+    }
+    
+    func saveArtworks(_ artworks: [Artwork]) {
+        persistencyManager.saveArtworks(artworks)
     }
     
 }

@@ -12,4 +12,5 @@ extension Notification.Name {
     static let loadTracksNK = Notification.Name("loadTracksNotificationKey")
     static let loadLyricsNK = Notification.Name("loadLyricsNotificationKey")
     static let updateTracksViewNK = Notification.Name("updateTracksViewNotificationKey")
+    static let artworksFetchedNK = Notification.Name("artworksFetchedNotifacationKey")
 }

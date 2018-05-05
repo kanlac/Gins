@@ -12,6 +12,7 @@ import UIKit
 class PickArtworkVC: UIViewController {
     
     var query: String?
+    var artworks: [Artwork]?
     
     @IBOutlet weak var queryTextField: UITextField!
     @IBAction func DismissButton(_ sender: Any) {
@@ -23,6 +24,14 @@ class PickArtworkVC: UIViewController {
         
         queryTextField.text = query
         LibraryAPI.shared.fetchArtworks(with: query!)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: .artworksFetchedNK, object: nil)
+    }
+    
+    @objc func updateView() {
+        artworks = LibraryAPI.shared.getArtworks()
+        
+        
     }
     
 }

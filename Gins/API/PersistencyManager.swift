@@ -12,6 +12,7 @@ final class PersistencyManager {
     
     private var tracks = [Track]()
     private var lyrics = String()
+    private var artworks = [Artwork]()
     
     init() {
         let savedURL = documents.appendingPathComponent(Filenames.Tracks)
@@ -42,6 +43,16 @@ final class PersistencyManager {
         self.lyrics = lyrics
         
         NotificationCenter.default.post(name: .loadLyricsNK, object: nil)
+    }
+    
+    func saveArtworks(_ artworks: [Artwork]) {
+        self.artworks = artworks
+        
+        NotificationCenter.default.post(name: .artworksFetchedNK, object: nil)
+    }
+    
+    func getArtworks() -> [Artwork] {
+        return artworks
     }
     
     // MARK: Implementing archiving and serialization
