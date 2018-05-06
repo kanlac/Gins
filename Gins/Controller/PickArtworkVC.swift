@@ -26,13 +26,19 @@ class PickArtworkVC: UIViewController {
     @IBAction func DismissButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    @IBAction func makeRequest(_ sender: Any) {
+        LibraryAPI.shared.fetchArtworks(with: query!)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
+        
         queryTextField.text = query
         LibraryAPI.shared.fetchArtworks(with: query!)
         artworkTableView.dataSource = self
+        artworkTableView.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: .artworksFetchedNK, object: nil)
     }
@@ -59,5 +65,9 @@ extension PickArtworkVC: UITableViewDataSource {
         cell.artistTitle.text = artworks[indexPath.row].artist
         return cell
     }
+    
+}
+
+extension PickArtworkVC: UITableViewDelegate {
     
 }

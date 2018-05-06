@@ -271,7 +271,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNZ-EQ-yVr">
-                                <rect key="frame" x="29" y="83.5" width="296" height="20"/>
+                                <rect key="frame" x="29" y="84" width="256" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="WqH-3I-GQ4"/>
                                 </constraints>
@@ -338,17 +338,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search" translatesAutoresizingMaskIntoConstraints="NO" id="XeY-IS-uFz">
-                                <rect key="frame" x="332" y="84.5" width="18" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="18" id="e2F-bg-nT5"/>
-                                    <constraint firstAttribute="height" constant="18" id="uZq-PN-M6j"/>
-                                </constraints>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51B-5f-aOT">
+                                <rect key="frame" x="314" y="83" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="makeRequest:" destination="0Oq-cm-jQX" eventType="touchUpInside" id="S8P-sz-glB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XeY-IS-uFz" firstAttribute="centerY" secondItem="uNZ-EQ-yVr" secondAttribute="centerY" id="2G9-cu-7vq"/>
                             <constraint firstItem="1mm-fi-LVY" firstAttribute="top" secondItem="Bie-wi-3me" secondAttribute="top" id="6ea-Hz-FuQ"/>
                             <constraint firstItem="1mm-fi-LVY" firstAttribute="centerX" secondItem="zql-4a-WqI" secondAttribute="centerX" id="8hN-4H-mTf"/>
                             <constraint firstItem="uNZ-EQ-yVr" firstAttribute="leading" secondItem="rm2-AD-RI4" secondAttribute="leading" constant="25" id="A3G-zG-e3j"/>
@@ -358,13 +358,12 @@
                             <constraint firstItem="e5n-af-uhA" firstAttribute="top" secondItem="Fmd-WC-VjJ" secondAttribute="top" constant="15" id="JSW-Pu-5Fj"/>
                             <constraint firstItem="1mm-fi-LVY" firstAttribute="leading" secondItem="zql-4a-WqI" secondAttribute="leading" id="MmQ-Jy-La7"/>
                             <constraint firstItem="Fmd-WC-VjJ" firstAttribute="leading" secondItem="Bie-wi-3me" secondAttribute="leading" constant="4" id="N37-jq-Up0"/>
+                            <constraint firstItem="uNZ-EQ-yVr" firstAttribute="trailing" secondItem="rm2-AD-RI4" secondAttribute="trailing" constant="-80" id="TMv-NH-REx"/>
                             <constraint firstItem="Bie-wi-3me" firstAttribute="trailing" secondItem="rm2-AD-RI4" secondAttribute="trailing" constant="10" id="Xop-Mi-SvE"/>
                             <constraint firstItem="e5n-af-uhA" firstAttribute="bottom" secondItem="Fmd-WC-VjJ" secondAttribute="bottom" constant="-15" id="Y5S-cx-akb"/>
                             <constraint firstItem="Bie-wi-3me" firstAttribute="trailing" secondItem="Fmd-WC-VjJ" secondAttribute="trailing" constant="15" id="Y8Z-Il-1Ky"/>
                             <constraint firstAttribute="trailing" secondItem="1mm-fi-LVY" secondAttribute="trailing" id="a3e-jj-9g4"/>
-                            <constraint firstItem="XeY-IS-uFz" firstAttribute="trailing" secondItem="rm2-AD-RI4" secondAttribute="trailing" constant="-15" id="dXT-eh-dRf"/>
                             <constraint firstItem="Bie-wi-3me" firstAttribute="bottom" secondItem="Fmd-WC-VjJ" secondAttribute="bottom" id="kH3-pr-kgt"/>
-                            <constraint firstItem="uNZ-EQ-yVr" firstAttribute="trailing" secondItem="rm2-AD-RI4" secondAttribute="trailing" constant="-40" id="m5I-xr-yvz"/>
                             <constraint firstItem="uNZ-EQ-yVr" firstAttribute="centerY" secondItem="rm2-AD-RI4" secondAttribute="centerY" constant="-5" id="pGI-ot-nn2"/>
                             <constraint firstItem="Fmd-WC-VjJ" firstAttribute="top" secondItem="rm2-AD-RI4" secondAttribute="bottom" constant="10" id="pXy-h1-qgv"/>
                             <constraint firstItem="rm2-AD-RI4" firstAttribute="top" secondItem="1mm-fi-LVY" secondAttribute="bottom" constant="15" id="ugr-eJ-2Ip"/>
@@ -386,7 +385,6 @@
         <image name="Artwork table frame" width="3660" height="5140"/>
         <image name="Lyrics frame" width="3660" height="3380"/>
         <image name="Playing frame" width="3660" height="1340"/>
-        <image name="Search" width="54" height="54"/>
         <image name="Tool bar" width="3640" height="450"/>
         <image name="Track list frame" width="3660" height="6630"/>
         <image name="Update sign" width="180" height="180"/>

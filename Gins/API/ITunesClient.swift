@@ -18,6 +18,7 @@ class ITunesClient {
         let request = URL(string: encodedRequestString)!
 
         var artworks = [Artwork]()
+        print("request url: \(encodedRequestString)")
 
         URLSession.shared.dataTask(with: request) { (data, error, response) in
             
@@ -36,26 +37,31 @@ class ITunesClient {
                     return
                 }
                 
-                for i in 0..<resultCount {
+                if resultCount > 0 {
                     
-                    let body = results[i]
-                    guard let collectionName = body["collectionName"],
-                        let artistName = body["artistName"],
-                        let artworkUrl100 = body["artworkUrl100"] else {
-                            print("Artworks data parse error. Number: \(i)")
-                            return
+                    for i in 0..<resultCount {
+                        let body = results[i]
+                        guard let collectionName = body["collectionName"],
+                            let artistName = body["artistName"],
+                            let artworkUrl100 = body["artworkUrl100"] else {
+                                print("Artworks data parse error. Number: \(i)")
+                                return
+                        }
+                        
+                        // Save as Artwork object..
+                        
+                        let artwork = Artwork(title: collectionName as! String, artist: artistName as! String, artworkURL: artworkUrl100 as! String)
+                        
+                        print("appending artwork: \(artwork)")
+                        artworks.append(artwork)
+                        
                     }
+                    LibraryAPI.shared.saveArtworks(artworks)
                     
-                    // Save as Artwork object..
-                    
-                    let artwork = Artwork(title: collectionName as! String, artist: artistName as! String, artworkURL: artworkUrl100 as! String)
-                    
-                    artworks.append(artwork)
-                    
+                } else {
+                    print("No artworks fetched from iTunes.")
                 }
                 
-                LibraryAPI.shared.saveArtworks(artworks)
-
             } catch {
                 print("Could not parse as JSON.")
             }
