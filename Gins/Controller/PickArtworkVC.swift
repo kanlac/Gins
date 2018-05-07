@@ -61,6 +61,13 @@ extension PickArtworkVC: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.artworkCellIdentifier, for: indexPath) as! ArtworkTableViewCell
+        
+        var artwork = UIImage()
+        if let artworkURL = URL(string: artworks[indexPath.row].artworkURL),
+            let artworkData = try? Data(contentsOf: artworkURL) {
+            artwork = UIImage(data: artworkData)!
+        }
+        cell.artworkImageView.image = artwork
         cell.albumTitle.text = artworks[indexPath.row].title
         cell.artistTitle.text = artworks[indexPath.row].artist
         return cell
