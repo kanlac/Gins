@@ -88,7 +88,7 @@
                                                     <constraint firstAttribute="width" constant="18" id="T8j-s3-CWJ"/>
                                                     <constraint firstAttribute="height" constant="18" id="mOC-Up-24y"/>
                                                 </constraints>
-                                                <state key="normal" title="Update" image="Update sign"/>
+                                                <state key="normal" image="Refresh"/>
                                                 <connections>
                                                     <action selector="updateButton:" destination="8n0-9o-Blb" eventType="touchUpInside" id="ZTS-jW-5en"/>
                                                 </connections>
@@ -167,10 +167,10 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qho-Xa-P8D">
-                                                <rect key="frame" x="74" y="143" width="30" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qho-Xa-P8D">
+                                                <rect key="frame" x="81" y="147" width="18" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="R"/>
+                                                <state key="normal" image="Request artwork"/>
                                                 <connections>
                                                     <segue destination="0Oq-cm-jQX" kind="popoverPresentation" popoverAnchorView="qho-Xa-P8D" id="Uf9-ma-BXs">
                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -256,7 +256,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Pick Artwork" id="XMS-C1-Srz">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wLG-7W-2ZR">
+                                        <barButtonItem key="leftBarButtonItem" image="Cancel" id="wLG-7W-2ZR">
                                             <connections>
                                                 <action selector="DismissButton:" destination="0Oq-cm-jQX" id="P26-Ik-OpV"/>
                                             </connections>
@@ -338,10 +338,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51B-5f-aOT">
-                                <rect key="frame" x="314" y="83" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51B-5f-aOT">
+                                <rect key="frame" x="328" y="87" width="18" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="Search"/>
                                 <connections>
                                     <action selector="makeRequest:" destination="0Oq-cm-jQX" eventType="touchUpInside" id="S8P-sz-glB"/>
                                 </connections>
@@ -383,10 +383,13 @@
     <resources>
         <image name="Artwork query frame" width="3640" height="510"/>
         <image name="Artwork table frame" width="3660" height="5140"/>
+        <image name="Cancel" width="21" height="13"/>
         <image name="Lyrics frame" width="3660" height="3380"/>
         <image name="Playing frame" width="3660" height="1340"/>
+        <image name="Refresh" width="18" height="18"/>
+        <image name="Request artwork" width="18" height="18"/>
+        <image name="Search" width="18" height="18"/>
         <image name="Tool bar" width="3640" height="450"/>
         <image name="Track list frame" width="3660" height="6630"/>
-        <image name="Update sign" width="180" height="180"/>
     </resources>
 </document>
