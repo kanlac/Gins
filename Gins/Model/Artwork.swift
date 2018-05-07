@@ -13,9 +13,10 @@ struct Artwork {
     
     let title: String
     let artist: String
-    let artworkURL: String
+    let artworkURLString: String
     
-//    func getImage() -> UIImage {
-//    }
+    func convertHiRsURLString() -> String {
+        return artworkURLString.replacingOccurrences(of: "100x100", with: "1800x1800")
+    }
     
 }

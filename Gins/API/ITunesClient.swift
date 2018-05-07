@@ -50,7 +50,7 @@ class ITunesClient {
                         
                         // Save as Artwork object..
                         
-                        let artwork = Artwork(title: collectionName as! String, artist: artistName as! String, artworkURL: artworkUrl100 as! String)
+                        let artwork = Artwork(title: collectionName as! String, artist: artistName as! String, artworkURLString: artworkUrl100 as! String)
                         
                         print("appending artwork: \(artwork)")
                         artworks.append(artwork)
