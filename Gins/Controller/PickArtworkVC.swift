@@ -39,6 +39,8 @@ class PickArtworkVC: UIViewController {
         LibraryAPI.shared.fetchArtworks(with: query!)
         artworkTableView.dataSource = self
         artworkTableView.delegate = self
+        artworkTableView.rowHeight = 85
+        artworkTableView.separatorStyle = .none
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: .artworksFetchedNK, object: nil)
     }
