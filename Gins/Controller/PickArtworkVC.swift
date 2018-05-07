@@ -37,6 +37,7 @@ class PickArtworkVC: UIViewController {
         
         queryTextField.text = query
         LibraryAPI.shared.fetchArtworks(with: query!)
+        queryTextField.delegate = self
         artworkTableView.dataSource = self
         artworkTableView.delegate = self
         artworkTableView.rowHeight = 85
@@ -80,3 +81,19 @@ extension PickArtworkVC: UITableViewDataSource {
 extension PickArtworkVC: UITableViewDelegate {
     
 }
+
+extension PickArtworkVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.query = textField.text
+        makeRequest(self)
+        return true
+    }
+}
+
+
+
+
+
+
