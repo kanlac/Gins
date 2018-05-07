@@ -22,7 +22,7 @@ class MusixmatchClient {
             if error == nil {
 
                 guard let data = data else {
-                    print("No data returned.")
+                    self.saveAsEmpty(with: "No data returned.")
                     return
                 }
 
@@ -32,19 +32,19 @@ class MusixmatchClient {
                     parseResult = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
 
                     guard let message = parseResult["message"] as? [String: AnyObject] else {
-                        print("Get message error.")
+                        self.saveAsEmpty(with: "Get message error.")
                         return
                     }
                     guard let body = message["body"] as? [String: AnyObject] else {
-                        print("body error in Musixmatch.")
+                        self.saveAsEmpty(with: "body error in Musixmatch.")
                         return
                     }
                     guard let lyricsDic = body["lyrics"] as? [String: AnyObject] else {
-                        print("lyricsDic error.")
+                        self.saveAsEmpty(with: "lyricsDic error.")
                         return
                     }
                     guard let lyrics_body = lyricsDic["lyrics_body"] as? String else {
-                        print("lyrics_body error.")
+                        self.saveAsEmpty(with: "lyrics_body error.")
                         return
                     }
                     
@@ -52,15 +52,20 @@ class MusixmatchClient {
                     LibraryAPI.shared.saveLyrics(finalLyrics!)
                     
                 } catch {
-                    print("could not parse as JSON")
+                    self.saveAsEmpty(with: "could not parse as JSON")
                 }
 
-
             } else {
-                print(error ?? "Error (no message)")
+                let message: String = error as? String ?? "Error (no message)"
+                self.saveAsEmpty(with: message)
             }
+            
             }.resume()
-
+    }
+    
+    func saveAsEmpty(with error: String) {
+        print(error)
+        LibraryAPI.shared.saveLyrics("")
     }
     
 }
