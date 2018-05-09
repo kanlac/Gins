@@ -51,6 +51,15 @@ class PickArtworkVC: UIViewController {
         LibraryAPI.shared.fetchArtworks(with: query!)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.showArtworkSegue,
+            let destination = segue.destination as? ArtworkSelectionVC,
+            let artworkIndex = artworkTableView.indexPathForSelectedRow?.row {
+            destination.testStr = "\(artworkIndex)"
+            print("testStr: \(destination.testStr)")
+        }
+    }
+    
     @objc func updateView() {
         artworks = LibraryAPI.shared.getArtworks()
         
@@ -84,7 +93,6 @@ extension PickArtworkVC: UITableViewDataSource {
 }
 
 extension PickArtworkVC: UITableViewDelegate {
-    
 }
 
 extension PickArtworkVC: UITextFieldDelegate {

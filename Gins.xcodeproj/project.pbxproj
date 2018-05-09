@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30023893208B358F0041A59A /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30023892208B358F0041A59A /* MarqueeLabel.swift */; };
+		3014641820A3187700E92CF8 /* ArtworkSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014641720A3187700E92CF8 /* ArtworkSelectionVC.swift */; };
 		302E842B2078E5A8008F417E /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E842A2078E5A8008F417E /* NotificationExtension.swift */; };
 		30779C6720982B9100E42BAC /* PickArtworkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30779C6620982B9100E42BAC /* PickArtworkVC.swift */; };
 		30779C692098343C00E42BAC /* ITunesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30779C682098343C00E42BAC /* ITunesClient.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		30023892208B358F0041A59A /* MarqueeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
+		3014641720A3187700E92CF8 /* ArtworkSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkSelectionVC.swift; sourceTree = "<group>"; };
 		302E842A2078E5A8008F417E /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		30779C6620982B9100E42BAC /* PickArtworkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickArtworkVC.swift; sourceTree = "<group>"; };
 		30779C682098343C00E42BAC /* ITunesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesClient.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				30F535992074EFE0006DF67D /* ViewController.swift */,
 				30779C6620982B9100E42BAC /* PickArtworkVC.swift */,
+				3014641720A3187700E92CF8 /* ArtworkSelectionVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				30F535982074EFE0006DF67D /* AppDelegate.swift in Sources */,
 				30023893208B358F0041A59A /* MarqueeLabel.swift in Sources */,
 				30F535B0207508E4006DF67D /* LibraryAPI.swift in Sources */,
+				3014641820A3187700E92CF8 /* ArtworkSelectionVC.swift in Sources */,
 				30F535AD2074F8F3006DF67D /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
