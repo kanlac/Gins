@@ -79,9 +79,12 @@ class ViewController: UIViewController {
             }
         }
         
-        // request
-        LibraryAPI.shared.requestData(url: urlString)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        LibraryAPI.shared.requestData(url: urlString)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

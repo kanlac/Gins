@@ -36,7 +36,6 @@ class PickArtworkVC: UIViewController {
         view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
         
         queryTextField.text = query
-        LibraryAPI.shared.fetchArtworks(with: query!)
         queryTextField.delegate = self
         artworkTableView.dataSource = self
         artworkTableView.delegate = self
@@ -46,6 +45,12 @@ class PickArtworkVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: .artworksFetchedNK, object: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        LibraryAPI.shared.fetchArtworks(with: query!)
+    }
+    
     @objc func updateView() {
         artworks = LibraryAPI.shared.getArtworks()
         
@@ -53,7 +58,6 @@ class PickArtworkVC: UIViewController {
             self.artworkTableView.reloadData()
         }
     }
-    
 }
 
 extension PickArtworkVC: UITableViewDataSource {

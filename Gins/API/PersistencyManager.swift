@@ -67,8 +67,7 @@ final class PersistencyManager {
     
     func encodeTracks() {
         let url = documents.appendingPathComponent(Filenames.Tracks)
-        let encoder = JSONEncoder()
-        guard let encodedData = try? encoder.encode(tracks) else {
+        guard let encodedData = try? JSONEncoder().encode(tracks) else {
             return
         }
         try? encodedData.write(to: url)
