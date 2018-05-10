@@ -57,7 +57,7 @@ class PickArtworkVC: UIViewController {
         if segue.identifier == Constants.showArtworkSegue,
             let destination = segue.destination as? ArtworkSelectionVC,
             let artworkIndex = artworkTableView.indexPathForSelectedRow?.row {
-            destination.artworkIndex = artworkIndex
+            destination.selectionURLString = artworks[artworkIndex].convertHiRsURLString()
         }
     }
     

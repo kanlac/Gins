@@ -10,7 +10,7 @@ import UIKit
 
 class ArtworkSelectionVC: UIViewController {
     
-    var artworkIndex = Int()
+    var selectionURLString = String()
 
     @IBOutlet weak var selectionImageView: UIImageView!
     @IBAction func dismissButton(_ sender: Any) {
@@ -20,7 +20,13 @@ class ArtworkSelectionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        var selection = UIImage()
+        if let selectionURL = URL(string: selectionURLString),
+            let selectionData = try? Data(contentsOf: selectionURL) {
+            selection = UIImage(data: selectionData)!
+        }
+        selectionImageView.image = selection
+        
     }
 
     override func didReceiveMemoryWarning() {
