@@ -27,6 +27,8 @@ class PickArtworkVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func makeRequest(_ sender: Any) {
+        queryTextField.resignFirstResponder()
+        query = queryTextField.text
         LibraryAPI.shared.fetchArtworks(with: query!)
     }
     
@@ -98,8 +100,6 @@ extension PickArtworkVC: UITableViewDelegate {
 extension PickArtworkVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        self.query = textField.text
         makeRequest(self)
         return true
     }
