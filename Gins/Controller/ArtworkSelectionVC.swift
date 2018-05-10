@@ -10,8 +10,9 @@ import UIKit
 
 class ArtworkSelectionVC: UIViewController {
     
-    var testStr = String()
+    var artworkIndex = Int()
 
+    @IBOutlet weak var selectionImageView: UIImageView!
     @IBAction func dismissButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
