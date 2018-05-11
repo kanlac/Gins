@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>911Fonts.com_LucidaGrandeRegular.ttf</string>
+	</array>
 </dict>
 </plist>
