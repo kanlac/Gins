@@ -118,6 +118,9 @@ class ViewController: UIViewController {
                 self.artistLabel.text = latest.artist
                 self.albumLabel.text = latest.album
                 self.latestCover.image = cover
+                if self.latestCover.image != nil {
+                    self.latestCover.dropShadow()
+                }
                 
                 self.lyricsTextView.text = ""
                 

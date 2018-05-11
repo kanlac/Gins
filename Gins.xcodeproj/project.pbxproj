@@ -17,6 +17,7 @@
 		30D4690920774DB200838A6F /* MusixmatchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690820774DB200838A6F /* MusixmatchClient.swift */; };
 		30D4690B2077559B00838A6F /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4690A2077559B00838A6F /* PersistencyManager.swift */; };
 		30D78D6320A576C500988C9A /* 911Fonts.com_LucidaGrandeRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30D78D6220A576C500988C9A /* 911Fonts.com_LucidaGrandeRegular.ttf */; };
+		30D78D6520A5833600988C9A /* ShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D78D6420A5833600988C9A /* ShadowExtension.swift */; };
 		30F535982074EFE0006DF67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535972074EFE0006DF67D /* AppDelegate.swift */; };
 		30F5359A2074EFE0006DF67D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F535992074EFE0006DF67D /* ViewController.swift */; };
 		30F5359D2074EFE0006DF67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F5359B2074EFE0006DF67D /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		30D4690820774DB200838A6F /* MusixmatchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusixmatchClient.swift; sourceTree = "<group>"; };
 		30D4690A2077559B00838A6F /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		30D78D6220A576C500988C9A /* 911Fonts.com_LucidaGrandeRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 911Fonts.com_LucidaGrandeRegular.ttf; sourceTree = "<group>"; };
+		30D78D6420A5833600988C9A /* ShadowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowExtension.swift; sourceTree = "<group>"; };
 		30F535942074EFE0006DF67D /* Gins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30F535972074EFE0006DF67D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30F535992074EFE0006DF67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				302E842A2078E5A8008F417E /* NotificationExtension.swift */,
 				30023892208B358F0041A59A /* MarqueeLabel.swift */,
+				30D78D6420A5833600988C9A /* ShadowExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				30F535B2207509D9006DF67D /* Constants.swift in Sources */,
 				30D4690720774CA500838A6F /* LastfmClient.swift in Sources */,
 				30D4690920774DB200838A6F /* MusixmatchClient.swift in Sources */,
+				30D78D6520A5833600988C9A /* ShadowExtension.swift in Sources */,
 				30779C692098343C00E42BAC /* ITunesClient.swift in Sources */,
 				30779C6720982B9100E42BAC /* PickArtworkVC.swift in Sources */,
 				30D4690B2077559B00838A6F /* PersistencyManager.swift in Sources */,
