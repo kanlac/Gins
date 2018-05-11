@@ -20,6 +20,7 @@ class ArtworkSelectionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "LucidaGrande", size: 21)!]
         var selection = UIImage()
         if let selectionURL = URL(string: selectionURLString),
             let selectionData = try? Data(contentsOf: selectionURL) {
